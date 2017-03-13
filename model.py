@@ -99,11 +99,11 @@ model.summary()
 model.compile(loss='mse', optimizer='adam')
 nb_spe =len(train_samples)*3
 nb_val = len(validation_samples)*3
-history = model.fit_generator(train_generator, samples_per_epoch=nb_spe, validation_data=validation_generator, nb_val_samples=nb_val, nb_epoch=12)
+history = model.fit_generator(train_generator, samples_per_epoch=nb_spe, validation_data=validation_generator, nb_val_samples=nb_val, nb_epoch=10)
 print(history.history.keys())
 model.save('model_gen.h5')
 print(history.history['loss'])
-print(history.history['acc'])
+print(history.history['val_loss'])
 
 def show_history(history):
 	# summarize history for loss
