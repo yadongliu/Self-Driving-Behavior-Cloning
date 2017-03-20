@@ -6,6 +6,12 @@ The goals / steps of this project are the following:
 * Use the model to drive the vehicle autonomously around the first track in the simulator. The vehicle should remain on the road for an entire loop around the track.
 * Summarize the results with a written report
 
+[//]: # (Image References)
+
+[image1]: ./left_2017_03_14_22_20_28_108.jpg "Left Camera"
+[image2]: ./center_2017_03_14_22_20_28_108.jpg "Center Camera"
+[image3]: ./right_2017_03_14_22_20_28_108.jpg "Right Camera"
+
 ### Dependencies
 This lab requires:
 
@@ -73,8 +79,11 @@ center_angle = float(batch_sample[3])
 left_angle = center_angle + 0.25
 right_angle = center_angle - 0.25
 ```
+To provide an example of the kind of images that were captured, shown below are three images from left, center and right camera respectively. The corresponding steering angle is 0.4112581, meaning that the car is steering to the right. As you can see from the center image, that is exactly what's happening, the car is trying to make a slight right turn around the curve ahead. The right image seems to show that the car is straight-facing the road and implies that a smaller steering angle should be applied. The left image implies we need to add a small value to the center steering angle.  
 
-Some commonly-used data augmentation techiques for images include random-brightness, translating/sheering, applying random shadows etc. I did not have to use these techniques for this project. 
+<img src="left_2017_03_14_22_20_28_108.jpg" alt="left" width="240" height="120"> <img src="center_2017_03_14_22_20_28_108.jpg" alt="center" width="240" height="120"> <img src="right_2017_03_14_22_20_28_108.jpg" alt="right" width="240" height="120">
+
+Some other commonly-used data augmentation techiques for images include random-brightness, translating/sheering, applying random shadows etc. I did not have to use these techniques for this project. 
 
 #### Data generator
 
