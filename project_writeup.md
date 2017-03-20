@@ -137,7 +137,7 @@ model.compile(loss='mse', optimizer='adam')
 
 Over 50 training epochs, I observed the overfitting problem with the proposed model but it was not too horrible (image on the left below). However, adding a Dropout layer after the Flatten layer definitely has a positive impact on overfitting (image on the right). 
 
-<img src="loss_nodropout.jpg" alt="left" width="480" height="360"> <img src="loss_withdropout.jpg" alt="left" width="480" height="360"> 
+<img src="loss_nodropout.jpg" alt="left" width="360" height="270"> <img src="loss_withdropout.jpg" alt="left" width="360" height="270"> 
 
 ```python
 model.add(Flatten())
