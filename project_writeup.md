@@ -133,6 +133,17 @@ model.add(Dense(1))
 model.compile(loss='mse', optimizer='adam')
 ```
 
+#### Overfitting and Using Dropout
+
+Over 50 training epochs, I observed the overfitting problem with the proposed model but it was not too horrible (image on the left below). However, adding a Dropout layer after the Flatten layer definitely has a positive impact on overfitting (image on the right). 
+
+<img src="loss_nodropout.jpg" alt="left" width="480" height="360"> <img src="loss_withdropout.jpg" alt="left" width="480" height="360"> 
+
+```python
+model.add(Flatten())
+model.add(Dropout(.5))
+```
+
 ## Result
 A video recording of autonomous driving with the model on Track 1 is shown in [video.mp4](https://github.com/yadongliu/Self-Driving-Behavior-Cloning/blob/master/video.mp4)
 
